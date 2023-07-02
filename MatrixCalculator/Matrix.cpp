@@ -4,7 +4,7 @@
 #include <stdio.h>
 using namespace std; //Declaración de bibliotecas
 
-int fila, col, nm, f_ma, f_mb, c_ma, c_mb;
+int fila, col, f_ma, f_mb, c_ma, c_mb;
 float matrizA[20][20], matrizB[20][20], matrizC[20][20], matrizD[20][20], matrizE[20][20];
 unsigned int opc, auxopc;
 const int MAX_COLUMNAS = 20;
@@ -272,14 +272,52 @@ void generacionmatriz() {
 	default: break;
 	}
 	system("PAUSE");
+	//clearallMatrices();
 }
 
-void clear(float matrizA[][MAX_COLUMNAS], float matrizB[][MAX_COLUMNAS], float matrizC[][MAX_COLUMNAS], int filas, int columnas) {
+void clear(float matrizA[][MAX_COLUMNAS], float matrizB[][MAX_COLUMNAS], float matrizC[][MAX_COLUMNAS], 
+	int filas, int columnas) {
 	for (int i = 0; i < filas; i++) {
 		for (int j = 0; j < columnas; j++) {
 			matrizA[i][j] = 0.0f;
 			matrizB[i][j] = 0.0f;
 			matrizC[i][j] = 0.0f;
+		}
+	}
+}
+
+void clearforM_A(float matrizA[][MAX_COLUMNAS], int f_ma, int c_ma) {
+	for (int i = 0; i < f_ma; i++) {
+		for (int j = 0; j < c_ma; j++) {
+			matrizA[i][j] = 0.0f;
+		}
+	}
+}
+
+void clearforM_B(float matrizB[][MAX_COLUMNAS], int f_mb, int c_mb) {
+	for (int i = 0; i < f_mb; i++) {
+		for (int j = 0; j < c_mb; j++) {
+			matrizB[i][j] = 0.0f;
+		}
+	}
+}
+
+void clearforM_C(float matrizC[][MAX_COLUMNAS], int f_ma, int c_mb) {
+	for (int i = 0; i < f_ma; i++) {
+		for (int j = 0; j < c_mb; j++) {
+			matrizC[i][j] = 0.0f;
+		}
+	}
+}
+
+void clearallMatrices() {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			matrizA[i][j] = 0.0f;
+			matrizB[i][j] = 0.0f;
+			matrizC[i][j] = 0.0f;
+			matrizD[i][j] = 0.0f;
+			matrizE[i][j] = 0.0f;
 		}
 	}
 }
@@ -427,6 +465,9 @@ int main() {
 				cout << "ERROR" << endl;
 			}
 			system("PAUSE");
+			clearforM_A(matrizA, f_ma, c_ma);
+			clearforM_B(matrizB, f_mb, c_mb);
+			clearforM_C(matrizC, f_ma, c_mb);
 			break;
 		case 4:
 			system("cls"); //Limpieza de pantalla
@@ -484,6 +525,9 @@ int main() {
 				cout << "ERROR" << endl;
 			}
 			system("PAUSE");
+			clearforM_A(matrizA, f_ma, c_ma);
+			clearforM_B(matrizB, f_mb, c_mb);
+			clearforM_C(matrizC, f_ma, c_mb);
 			break;
 		case 5:
 			system("cls"); //Limpieza de pantalla
@@ -554,6 +598,7 @@ int main() {
 				default: break;
 				}
 			} while (auxopc != 4);
+			clearallMatrices();
 			break;
 		case 7:
 			system("cls"); //Limpieza de pantalla
