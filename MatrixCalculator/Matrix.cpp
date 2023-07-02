@@ -323,7 +323,6 @@ void clearallMatrices() {
 }
 
 int main() {
-	//Pendiente de limpieza de matrices
 
 	do {//Inicio de ciclo
 		system("color a");
@@ -358,6 +357,7 @@ int main() {
 				}
 			}
 
+			cout << endl;
 			cout << "Matriz B" << endl;
 			for (int i = 0; i < fila; i++) {
 				for (int j = 0; j < col; j++) {
@@ -366,6 +366,7 @@ int main() {
 				}
 			}
 
+			cout << endl;
 			cout << "Matriz C" << endl;
 			for (int i = 0; i < fila; i++) { //Operación y resultado
 				cout << endl;
@@ -395,6 +396,7 @@ int main() {
 				}
 			}
 
+			cout << endl;
 			cout << "Matriz B" << endl;
 			for (int i = 0; i < fila; i++) {
 				for (int j = 0; j < col; j++) {
@@ -403,6 +405,7 @@ int main() {
 				}
 			}
 
+			cout << endl;
 			cout << "Matriz C" << endl;
 			for (int i = 0; i < fila; i++) { // Operación y resultado
 				cout << endl;
